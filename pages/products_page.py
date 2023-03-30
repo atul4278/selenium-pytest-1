@@ -11,4 +11,4 @@ class ProductsPage(BasePage):
         self.wait_until_page_load()
 
     def wait_until_page_load(self):
-        self.wait_until_visible(self.__inventory_item_container)
+        self._wait_until_visible(self.__inventory_item_container)

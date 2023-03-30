@@ -13,13 +13,13 @@ class LoginPage(BasePage):
         super().__init__(driver)
 
     def enter_username(self, username):
-        self.type(self.__username_field, username)
+        self._type(self.__username_field, username)
 
     def enter_password(self, password):
-        self.type(self.__password_field, password)
+        self._type(self.__password_field, password)
 
     def click_login(self):
-        self.click(self.__login_button)
+        self._click(self.__login_button)
 
     def execute_login(self, username, password):
         self.enter_username(username)
@@ -29,4 +29,4 @@ class LoginPage(BasePage):
         return ProductsPage(self._driver)
 
     def get_error_message_text(self):
-        return self.wait_until_visible(self.__error_message).text
+        return self._wait_until_visible(self.__error_message).text
