@@ -1,2 +1,3 @@
 # selenium-pytest-1
-Test Automation with Selenium and pytest
+This is a test automation framework which uses Selenium and pytest.
+This is approach one to build automation framework with python.
