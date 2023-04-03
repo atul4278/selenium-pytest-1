@@ -11,6 +11,7 @@ from utils.driver_manager import get_driver_object
 def pytest_addoption(parser):
     parser.addoption("--env", action='store', default="DEV", help="environment against which tests to be executed")
     parser.addoption("--browser", action='store', default="chrome", help="browser on which tests to be executed")
+    parser.addoption("--headless", action='store', default=False, help="execute tests in headless or headed mode")
 
 
 def pytest_configure(config):
@@ -57,7 +58,8 @@ def config(environment, pytestconfig):
 
 
 @pytest.fixture(scope='session')
-def driver(browser):
-    driver = get_driver_object(browser=browser)
+def driver(request, browser):
+    headless = request.config.getoption("--headless")
+    driver = get_driver_object(browser=browser, headless=headless)
     yield driver
     driver.quit()
