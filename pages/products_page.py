@@ -23,7 +23,7 @@ class ProductsPage(BasePage):
     def get_all_product_names(self):
         products = [product.text for product in self._find_elements(self.__inventory_item_name)]
         logging.info(f"Products: {products}")
-        return
+        return products
 
     def add_item_to_cart(self, product_name):
         logging.info(f"Add '{product_name}' item to cart")
