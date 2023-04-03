@@ -10,6 +10,7 @@ webdriver-manager = "*"
 assertpy = "*"
 pytest-html = "*"
 pytest-xdist = "*"
+pytest-sugar = "*"
 
 [dev-packages]
 
