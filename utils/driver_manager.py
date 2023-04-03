@@ -22,7 +22,7 @@ def get_driver_object(browser: str, headless: bool) -> WebDriver:
         options.add_argument('--ignore-ssl-errors=yes')
         options.add_argument('--ignore-certificate-errors=yes')
         if headless:
-            options.add_argument('--headless=new')
+            options.add_argument('--headless')
         driver = webdriver.Chrome(service=Service(GeckoDriverManager().install()), options=options)
 
     return driver
