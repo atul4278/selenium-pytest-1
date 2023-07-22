@@ -20,7 +20,7 @@ def pytest_configure(config):
         logging.basicConfig(
             datefmt=config.getini("log_file_date_format"),
             format=config.getini("log_file_format"),
-            filename=f"logs/tests_{worker_id}.log",
+            filename=f"results/tests_{worker_id}.log",
             level=config.getini("log_file_level"),
         )
 
